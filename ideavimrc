@@ -1,0 +1,81 @@
+if has('persistent_undo')
+  set undofile
+  set undodir=~/.vim/.undo
+endif
+" ---------------------------------------------------------------------------
+"  General
+" ---------------------------------------------------------------------------"
+set nocompatible
+filetype plugin indent on     " Automatically detect file types. (must turn on after Vundle)
+set wildmode=list:longest     " use emacs-style tab completion when selecting files, etc
+set hidden                    " Change buffer - without saving
+set autowriteall              " Writes on make/shell commands
+" set foldmethod=syntax
+set foldlevel=20
+set formatoptions=crql
+set iskeyword+=$,@,-          " Add extra characters that are valid parts of variables
+set tags=./tags;/,tags;/
+set splitright
+if version >= 704
+  set completeopt=menu,noinsert,noselect
+endif
+
+" Text Format {{{
+set tabstop=2
+set shiftwidth=2 " Tabs under smart indent
+set expandtab
+set encoding=utf-8
+" }}}
+
+set noerrorbells
+set novisualbell
+
+set mousehide  " Hide mouse after chars typed
+set mouse=a  " Mouse in all modes
+
+set pastetoggle=<F2>
+set scrolloff=3
+set autoindent
+set showmode
+set showcmd
+set ruler
+set hidden
+set ttyfast
+set backspace=indent,eol,start
+set laststatus=2
+set number
+set cursorline
+
+" ---------------------------------------------------------------------------
+"  Searching
+" ---------------------------------------------------------------------------
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+
+" ---------------------------------------------------------------------------
+"   User Interface 
+" ---------------------------------------------------------------------------"
+set t_Co=256            " use 265 colors in vim
+syntax on
+
+
+" ---------------------------------------------------------------------------
+" Key mapping 
+" ---------------------------------------------------------------------------"
+let mapleader=","
+
+vmap <Leader>y "+y
+map  <Leader>x "+x
+map  <Leader>p "+p
+
+" ---------------------------------------------------------------------------
+" Key mapping - IDEA Actions.
+" ---------------------------------------------------------------------------"
+nnoremap <leader>nf :action NewFile<CR>
+nnoremap <leader>c  :action Compile<CR>
+nnoremap <leader>c  :action CompileDirty<CR>
+
