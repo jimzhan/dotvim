@@ -21,3 +21,23 @@ if has('win32') || has('win64')
     set fileencodings=ucs-bom,utf-8,utf-16le,cp1252,iso-8859-15,chinese,euc-jp,gb18030,gbk,big5,latin1
   endif
 endif
+
+" ------------------------------------------------------------
+" Vim Variants' Compatabilities
+" ---------------------------------------------------------------------------
+if !has('nvim')
+  set ttyfast
+endif
+
+if !has('nvim')
+  if has("mouse_sgr")
+    set ttymouse=sgr
+  else
+    set ttymouse=xterm2
+  end
+end
+
+if $TERM_PROGRAM =~ "iTerm"
+  set termguicolors
+endif
+

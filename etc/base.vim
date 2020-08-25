@@ -48,24 +48,10 @@ set encoding=utf-8
 set guioptions=acg
 set guicursor=n-v-c:block-Cursor-blinkon0,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor,r-cr:hor20-Cursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 "set cursorline
-if !has('nvim')
-  set ttyfast
-endi
+"
 set lazyredraw
 if exists('+colorcolumn')
-  set colorcolumn=100 " Color the 80th column differently
-endif
-
-if !has('nvim')
-  if has("mouse_sgr")
-    set ttymouse=sgr
-  else
-    set ttymouse=xterm2
-  end
-end
-
-if $TERM_PROGRAM =~ "iTerm"
-  set termguicolors
+  set colorcolumn=120 " Color the 120th column differently
 endif
 
 highlight clear SignColumn              " SignColumn should match background
