@@ -64,6 +64,10 @@ if !has('nvim')
   end
 end
 
+if $TERM_PROGRAM =~ "iTerm"
+  set termguicolors
+endif
+
 highlight clear SignColumn              " SignColumn should match background
 "highlight clear CursorLineNr            " Remove highlight color from current line number
 highlight ColorColumn ctermbg=7         " Custom Colored Column
